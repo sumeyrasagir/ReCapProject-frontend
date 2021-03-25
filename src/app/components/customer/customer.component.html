@@ -1,24 +1,25 @@
 <div
   *ngIf="dataLoaded == false"
-  class="spinner-border"
-  style="width: 3rem; height: 3rem"
-  role="status"
->
+  class="spinner-border text-primary"
+  role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-<table *ngIf="dataLoaded == true" class="table">
+
+<table *ngIf="dataLoaded == true" class="table table-dark table-striped">
     <thead>
         <tr>
-            <th>Customer Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Mail</th>
+            <th>Id</th>
+            <th>İsim</th>
+            <th>Soyisim</th>
+            <th>Email</th>
         </tr>
     </thead>
-    <tr *ngFor="let customer of customers">
-        <td>{{customer.id}}</td>
-        <td>{{customer.firstName}}</td>
-        <td>{{customer.lastName}}</td>
-        <td>{{customer.email}}</td>
-    </tr>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.id}}</td>
+            <td>{{customer.firstName}}</td>
+            <td>{{customer.lastName}}</td>
+            <td>{{customer.email}}</td>
+        </tr>
+    </tbody>
 </table>

@@ -1,30 +1,31 @@
 <div
   *ngIf="dataLoaded == false"
-  class="spinner-border"
-  style="width: 3rem; height: 3rem"
-  role="status"
->
+  class="spinner-border text-primary"
+  role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-<table *ngIf="dataLoaded == true" class="table">
-  <thead>
-    <tr>
-      <th>Rental Id</th>
-      <th>Brand Name</th>
-      <th>Rent Date</th>
-      <th>Return Date</th>
-      <th>Company Name</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-    </tr>
-  </thead>
-  <tr *ngFor="let rental of rentals">
-    <td>{{ rental.rentalId }}</td>
-    <td>{{ rental.brandName }}</td>
-    <td>{{ rental.rentDate }}</td>
-    <td>{{ rental.returnDate }}</td>
-    <td>{{ rental.companyName }}</td>
-    <td>{{ rental.firstName }}</td>
-    <td>{{ rental.lastName }}</td>
-  </tr>
+
+<table *ngIf="dataLoaded == true" class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marka</th>
+            <th>İsim</th>
+            <th>Soyisim</th>
+            <th>Şirket</th>
+            <th>Kiralama Tarihi</th>
+            <th>Dönüş Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rental of rentals">
+            <td>{{rental.rentalId}}</td>
+            <td>{{rental.brandName}}</td>
+            <td>{{rental.firstName}}</td>
+            <td>{{rental.lastName}}</td>
+            <td>{{rental.companyName}}</td>
+            <td>{{rental.rentDate}}</td>
+            <td>{{rental.returnDate}}</td>
+        </tr>
+    </tbody>
 </table>
