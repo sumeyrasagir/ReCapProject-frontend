@@ -11,9 +11,7 @@
             <th>Id</th>
             <th>Marka</th>
             <th>Renk</th>
-            <th>Model</th>
-            <th>Günlük Ücret</th>
-            <th>Açıklama</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -21,9 +19,7 @@
             <td>{{car.carId}}</td>
             <td>{{car.brandName}}</td>
             <td>{{car.colorName}}</td>
-            <td>{{car.modelYear}}</td>
-            <td>{{car.dailyPrice}}</td>
-            <td>{{car.description}}</td>
+            <td><button routerLink="/cars/car-image/{{car.carId}}" type="button" class="btn btn-outline-light">Detaya Git</button></td>
         </tr>
     </tbody>
 </table>
