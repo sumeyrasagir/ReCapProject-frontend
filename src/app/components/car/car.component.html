@@ -5,20 +5,27 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
+<div class="mb-3">
+    <label for="filterText" class="form-label">Ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Özellik Ara">
+  </div>
+
 <table *ngIf="dataLoaded==true" class="table table-dark table-striped">
     <thead>
         <tr>
             <th>Id</th>
             <th>Marka</th>
             <th>Renk</th>
+            <th>Açıklama</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let car of cars">
+        <tr *ngFor="let car of cars |carFilter:filterText">
             <td>{{car.carId}}</td>
             <td>{{car.brandName}}</td>
             <td>{{car.colorName}}</td>
+            <td>{{car.description}}</td>
             <td><button routerLink="/cars/car-image/{{car.carId}}" type="button" class="btn btn-outline-light">Detaya Git</button></td>
         </tr>
     </tbody>
