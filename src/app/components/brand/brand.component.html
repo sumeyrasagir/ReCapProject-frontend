@@ -1,18 +1,22 @@
-<div class="mt-3">
+<!-- <div class="mt-3">
   <h5>Marka Seç</h5>
   <select class="form-select" [(ngModel)]="brandFilter" aria-label="Default select example">
     <option selected>Tüm Markalar</option>
     <option *ngFor="let brand of brands">{{brand.brandName}}</option>
   </select>
-  <button routerLink="" type="button" class="btn btn-success">Filtrele</button>
+</div> -->
+
+<div class="mb-3">
+  <label for="filterText" class="form-label"><h5>Marka</h5></label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Marka Ara">
 </div>
 
 
-<!-- <ul class="list-group">
-  <li [class]="getAllBrandClass()" 
-  routerLink="/cars">Tüm Markalar</li>
+<ul class="list-group">
+  <!-- <li [class]="getAllBrandClass()" 
+  routerLink="/cars">Tüm Markalar</li> -->
   <li (click)="setCurrentBrand(brand)" 
   routerLink="/cars/brand/{{brand.brandId}}"
-  *ngFor="let brand of brands" 
+  *ngFor="let brand of brands |brandFilter:filterText"
   [class]="getCurrentBrandClass(brand)">{{brand.brandName}}</li>
-</ul> -->
+</ul>

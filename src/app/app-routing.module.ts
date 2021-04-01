@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'cars/getCarDetails/:carId', component: CarComponent },
   { path: 'cars/listbycolor/:colorId', component: CarComponent },
   { path: 'cars/listbybrand/:brandId', component: CarComponent },
-  //{path:"cars/color/{{colorFilter.colorId}}", component:CarComponent}
 ];
 
 @NgModule({

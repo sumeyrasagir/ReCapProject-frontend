@@ -6,8 +6,9 @@ import { Brand } from '../models/brand';
 })
 export class BrandFilterPipe implements PipeTransform {
 
-  transform(value: Brand[], brandFilter: string): Brand[] {
-    return brandFilter?value.filter((b:Brand)=>b.brandName.indexOf(brandFilter)!==-1):value
+  transform(value: Brand[], filterText: string): Brand[] {
+    filterText = filterText?filterText.toLocaleLowerCase():""
+    return filterText?value.filter((c:Brand)=>c.brandName.toLocaleLowerCase().indexOf(filterText)!==-1):value
   }
 
 }
